@@ -1,0 +1,36 @@
+@mixin center-flex {
+    display: flex;
+    align-items: center;
+    justify-content:center;
+}
+@mixin center-vertical{
+    display: flex;
+    align-items: center;
+}
+@mixin center-horisontal{
+    display: flex;
+    justify-content: center;
+}
+@mixin circle{ 
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 7px solid black;
+}
+
+@mixin my-btn{
+    color: white;
+    border: none;
+    font-size: 14px;
+    font-weight: 800;
+}
+@mixin my-btn-secondary{
+    font-size: 14px;
+    font-weight: 600;
+    padding: 0;
+    color: black;
+    background-color: white;
+    border: none;
+    border-bottom:1px solid rgba(0, 0, 0, 0.191)
+}
+
+  

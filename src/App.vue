@@ -1,5 +1,7 @@
 <script>
 import axios from 'axios';
+import AppHeader from './components/AppHeader.vue';
+import AppFooter from './components/AppFooter.vue';
 
 export default{
   data(){
@@ -13,30 +15,34 @@ export default{
       this.projects = response.data.data;
      })
 
-  }
-  // components:{
-  //  myComponent,
-  //}
+  },
+  components:{AppHeader,AppFooter,},
+   
+  
 };
 
 </script>
 
 
 <template>
-  <div>
-    <h1>{{ title }}</h1>
-
-    <div v-for="project in projects">
-      <ul>
-        <li>title : {{ project.title }}</li>
-      </ul>
-    </div>
+  <div id="app">
+    <AppHeader/>
+    <div class="container">
     
+        
+    </div>
+    <AppFooter/>
   </div>
 </template>
 
 
 
-<style lang="scss">
-@use './scss/general.scss' as *;
+<style lang="scss" scoped>
+//import of var and mixins
+@use './scss/partials/variables.scss' as *;
+@use './scss/partials/mixins.scss' as *;
+.container {
+  overflow: scroll;
+  height: calc(100vh - $height-footer - $height-header); 
+}
 </style>
