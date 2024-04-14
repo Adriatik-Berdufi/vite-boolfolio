@@ -2,21 +2,16 @@
 import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
+import AppMain from './components/AppMain.vue';
+import { store } from "./store";
 
 export default{
   data(){
     return{
-      title:'Portafoglio',
-      projects:[],
-    }
+      store,
+     }
   },
-  created(){
-     axios.get('http://127.0.0.1:8000/api/projects').then((response)=>{
-      this.projects = response.data.data;
-     })
-
-  },
-  components:{AppHeader,AppFooter,},
+  components:{AppHeader,AppFooter,AppMain,},
    
   
 };
@@ -28,8 +23,8 @@ export default{
   <div id="app">
     <AppHeader/>
     <div class="container">
-    
-        
+      <AppMain/>
+
     </div>
     <AppFooter/>
   </div>

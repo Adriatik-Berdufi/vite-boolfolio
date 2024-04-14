@@ -6,6 +6,9 @@ export const store = reactive({
             name:'adriatik',
             last_name:'berdufi',
         },   
-     
+    api:{
+        baseUrl:'http://127.0.0.1:8000/api/',
+    },
+    projects:[],
 
 });
