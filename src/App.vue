@@ -1,17 +1,15 @@
 <script>
-import axios from 'axios';
 import AppHeader from './components/AppHeader.vue';
 import AppFooter from './components/AppFooter.vue';
-import AppMain from './components/AppMain.vue';
 import { store } from "./store";
 
 export default{
   data(){
     return{
-      store,
-     }
+      
+    }
   },
-  components:{AppHeader,AppFooter,AppMain,},
+  components:{AppHeader,AppFooter,},
    
   
 };
@@ -23,8 +21,7 @@ export default{
   <div id="app">
     <AppHeader/>
     <div class="container">
-      <AppMain/>
-
+     <router-view/>
     </div>
     <AppFooter/>
   </div>
