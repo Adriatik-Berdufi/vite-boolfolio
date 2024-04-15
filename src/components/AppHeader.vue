@@ -5,7 +5,7 @@ import { store } from "../store";
 export default{
   data(){
     return{
-      store,
+        store,
     }
   },
 
@@ -18,11 +18,21 @@ export default{
 <template>
 <header >
     <div class="container">
-        <nav class="navbar navbar-expand-sm">
+        <nav class="navbar navbar-expand-lg">
             <div class="container-fluid">
-                <a class="navbar-brand" href="#">
+                <router-link :to="{name:'home'}" class="navbar-brand">
                     <img src="../../public/logoAB.jpeg" alt="">
-                </a>
+                </router-link >
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                    <div class="navbar-nav">
+                        <router-link  :to="{name:'home'}" class="nav-link active" aria-current="page" >Home</router-link >
+                        <router-link :to="{name:'projects'}" Projects class="nav-link">Projects</router-link >
+                    </div>
+                </div>
+                 
             </div>
             <div>
                 <ul>
