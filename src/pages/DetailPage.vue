@@ -28,7 +28,25 @@ export default {
 
 <template>
   
-    <h1 class="text-center mt-5">{{ project.title }}</h1>
+  <div class="text-center mt-5">
+    <h1 class="mb-5">{{ project.title }}</h1>
+      <span><strong class="m-2">Author: {{ project.author }}</strong></span>
+      <p>
+          <strong class="me-2">Tecnologie utilizzate: </strong>
+          <span
+            v-for="tech in project.technologies"
+            class="badge me-2"
+            :style="'background-color:' + tech.color"
+            >{{ tech.label }}
+          </span>
+      </p>
+      <div><a :href="project.project_link" class="btn btn-primary">Guarda la repository Git</a></div>
+      <h2 class="mt-5"><strong class="m-2">Description</strong></h2>
+      <p class="text-center mt-2">{{ project.description }}</p> 
+      
+  </div>
+        
+
   
 </template>
 

@@ -19,7 +19,7 @@ export default{
             <div class="footer-menu">
                 <div class="socilas">
                     <span><a href="#"><font-awesome-icon :icon="['fab', 'x-twitter']" /></a></span>
-                    <span><a href="#"><font-awesome-icon :icon="['fab', 'square-github']" /></a></span>
+                    <span><a href="https://github.com/Adriatik-Berdufi"><font-awesome-icon :icon="['fab', 'square-github']" /></a></span>
                     <span><a href="#"><font-awesome-icon :icon="['fab', 'facebook']"/></a></span>
                     <span><a href="#"><font-awesome-icon :icon="['fab', 'instagram']"/></a></span>
                 </div>
