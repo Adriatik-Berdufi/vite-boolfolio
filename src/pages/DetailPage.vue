@@ -7,6 +7,7 @@ export default {
     return {
         store,
         project: null,
+        loading: true,
     };
   },
   props: {},
@@ -15,6 +16,7 @@ export default {
       const projectId = this.$route.params.id;
       axios.get(store.api.baseUrl + `projects/${projectId}`).then((response) => {
         this.project = response.data;
+        this.loading = false;
 
       });
     },
@@ -27,7 +29,7 @@ export default {
 </script>
 
 <template>
-  <div class="text-center mt-5">
+  <div v-if="project" class="text-center mt-5">
     <h1 class="mb-5">{{ project.title }}</h1>
       <span><strong class="m-2">Author: {{ project.author }}</strong></span>
       <p>
@@ -51,6 +53,9 @@ export default {
       <h2 class="mt-5"><strong class="m-2">Description</strong></h2>
       <p class="text-center mt-2">{{ project.description }}</p> 
       
+  </div>
+  <div v-else class="d-flex justify-content-center align-items-center" style="height: 80vh;">
+    <h2 class="h-5">Loading...</h2>
   </div>
         
 
